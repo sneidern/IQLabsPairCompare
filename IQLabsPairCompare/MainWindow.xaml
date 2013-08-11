@@ -1,0 +1,44 @@
+﻿<Window x:Class="IQLabsPairCompare.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="IQLab Pair Compare" Height="350" Width="807" MinWidth="526" MinHeight="350" KeyDown="Window_KeyDown" Background="DarkGray" PreviewMouseWheel="Window_PreviewMouseWheel" MouseLeave="Window_MouseLeave" PreviewMouseUp="Window_PreviewMouseUp" Name="mainAppWindow">
+    <Grid>
+        <Grid Name="grid1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="246*" />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="252*" />
+                <ColumnDefinition Width="252*" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Name="scrollViewer1" Grid.Column="0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Image Name="image1" Stretch="Uniform" PreviewMouseDown="image1_PreviewMouseDown" MouseMove="image1_MouseMove" />
+            </ScrollViewer>
+            <ScrollViewer Name="scrollViewer2" Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <Image Name="image2" Stretch="Uniform" PreviewMouseDown="image2_PreviewMouseDown" MouseMove="image2_MouseMove" />
+            </ScrollViewer>
+            <GroupBox Canvas.Left="262" Canvas.Top="22" Header="Test Admin Setup" Name="groupBox1" Grid.Row="1" BorderBrush="Black" Background="DarkGray">
+                <Canvas Grid.Column="0" Grid.Row="1" Name="wrapPanel1" Height="50">
+                    <TextBox Grid.Row="1" Height="23" HorizontalAlignment="Left" Name="textBox_folder1" VerticalAlignment="Top" Width="145" Grid.Column="0" Text="C:\temp\f1" Canvas.Left="6" Canvas.Top="0" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Name="textBox_folder2" VerticalAlignment="Top" Width="145" Grid.Row="1" Grid.Column="0" Text="C:\temp\f2" Canvas.Left="6" Canvas.Top="27" />
+                    <Button Content="Folder 2" Height="23" Name="button_openFolder2" Width="75" Click="button_openFolder2_Click" Canvas.Left="157" Canvas.Top="27" />
+                    <Button Content="Folder 1" Height="23" Name="button_openFolder1" Width="75" Click="button_openFolder1_Click" Canvas.Left="157" Canvas.Top="0" />
+                    <TextBox Grid.Column="0" Grid.Row="1" Height="23" Name="textBox_ObserverID" Width="136" Canvas.Left="238" Canvas.Top="28" />
+                    <Label Content="Observer" Height="28" Name="label1" Canvas.Left="238" Canvas.Top="9" />
+                    <Button Content="Start" Height="23" Name="button_startTest" Width="75" Click="button_startTest_Click" Canvas.Left="300" Canvas.Top="0" />
+                </Canvas>
+            </GroupBox>
+            <GroupBox Canvas.Left="165" Canvas.Top="27" Header="Observer Ratings" Name="groupBox2" Grid.Column="1" Grid.Row="1" BorderBrush="Black" Background="DarkGray">
+                <Canvas Grid.Column="1" Grid.Row="1" Name="wrapPanel2">
+                    <Button Content="&lt;" Height="23" Name="button_preferLeft" Width="75" Click="button_preferLeft_Click" IsEnabled="False" />
+                    <Button Content="=" Height="23" Name="button_dontcare" Width="75" Click="button_dontcare_Click" Canvas.Left="82" Canvas.Top="0" IsEnabled="False" />
+                    <Button Content=">" Height="23" Name="button_preferRight" Width="75" Click="button_preferRight_Click" Canvas.Left="165" Canvas.Top="0" IsEnabled="False" />
+                    <Label Content="0/0" Height="28" Name="label_pairindex" Canvas.Left="254" Canvas.Top="0" />
+                    <CheckBox Canvas.Left="6" Canvas.Top="34" Content="Sync Pan and Zoom" Height="16" Name="checkBox_SyncPanZoom" IsChecked="True" />
+                    <CheckBox Canvas.Left="288" Canvas.Top="4" Content="Disaster!" Height="16" Name="checkBox_disaster" />
+                </Canvas>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>
